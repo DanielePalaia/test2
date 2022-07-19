@@ -2,7 +2,7 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
-  name: rabbitmq-cluster-operator.v1.14.0
+  name: #@ data.values.name
   namespace: placeholder
   annotations:
     alm-examples: >-
@@ -37,7 +37,7 @@ spec:
 
     ## Prerequisites for enabling this Operator
   maturity: mature
-  version: 1.14.0
+  version: #@ data.values.version
   replaces: ''
   skips: []
   minKubeVersion: ''
