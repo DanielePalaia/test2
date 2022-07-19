@@ -4855,4 +4855,5 @@ spec:
             cpu: 200m
             memory: 500Mi
       serviceAccountName: rabbitmq-cluster-operator
-      terminationGracePeriodSeconds: 10---
+      terminationGracePeriodSeconds: 10
+
