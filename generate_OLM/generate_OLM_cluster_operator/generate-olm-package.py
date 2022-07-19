@@ -2,7 +2,7 @@ import os
 import sys
 
 # insert at position 1 in the path, as 0 is the path of this file.
-sys.path.insert(1, '/./../../common_code')
+sys.path.insert(1, './../../common_code')
 
 from create_overlay import create_overlay
 
