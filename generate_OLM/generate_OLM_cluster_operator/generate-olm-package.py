@@ -46,7 +46,7 @@ def create_overlay(release_file, kind, firstString, endString, file_generator, f
 cluster_operator_release_file = "./generators/cluster-operator.yaml"
 
 os.system("cp " + operator_release_file + " " + cluster_operator_release_file)
-os.system("echo \"---\" >> "+cluster_operator_release_file )
+os.system("echo \"\n---\" >> "+cluster_operator_release_file )
 
 # Finalize the overlay
 create_overlay(cluster_operator_release_file, "kind: Role", "rules:", "---", "./generators/overlay-permission-generator.yaml", "./overlays/overlay-permission.yaml")       
@@ -59,8 +59,8 @@ os.system("ytt -f ./overlays/overlay-cluster-permission.yaml -f ./tmpmanifests/c
 os.system("ytt -f ./overlays/overlay-deployment.yaml -f ./tmpmanifests/cluster-service-version-cluster-permission.yaml > ./generators/cluster-service-version.yaml")
 
 # Create the structure
-rabbitmq_cluster_operator_dir="./../OLM/rabbitmq-cluster-operator/" + version 
-os.system("mkdir -p ./../OLM/rabbitmq-cluster-operator/" + version + "/manifests")
+rabbitmq_cluster_operator_dir="./../../OLM/rabbitmq-cluster-operator/" + version 
+os.system("mkdir -p ./../../OLM/rabbitmq-cluster-operator/" + version + "/manifests")
 os.system("cp ./generators/cluster-service-version.yaml " + rabbitmq_cluster_operator_dir+"/manifests")
 os.system("cp ./generators/cluster-service-version.yaml " + rabbitmq_cluster_operator_dir+"/manifests")
 os.system("cp ./manifests_crds/crds.yaml " + rabbitmq_cluster_operator_dir+"/manifests")
