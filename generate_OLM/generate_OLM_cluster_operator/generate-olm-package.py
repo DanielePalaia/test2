@@ -37,7 +37,6 @@ rabbitmq_cluster_operator_dir="./../../OLM/rabbitmq-cluster-operator/" + version
 rabbitmq_cluster_operator_dir_manifests=rabbitmq_cluster_operator_dir+"/manifests"
 os.system("mkdir -p ./../../OLM/rabbitmq-cluster-operator/" + version + "/manifests")
 os.system("cp ./generators/cluster-service-version.yaml " + rabbitmq_cluster_operator_dir_manifests)
-os.system("cp ./generators/cluster-service-version.yaml " + rabbitmq_cluster_operator_dir_manifests)
 os.system("cp ./generators/bundle.Dockerfile " + rabbitmq_cluster_operator_dir)
 os.system("cp ./manifests_crds/crds.yaml " + rabbitmq_cluster_operator_dir_manifests)
 os.system("cp -fR ./metadata/metadata " + rabbitmq_cluster_operator_dir)
